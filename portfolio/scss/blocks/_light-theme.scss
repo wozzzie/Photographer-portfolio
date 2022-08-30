@@ -1,0 +1,120 @@
+.ligth-theme {
+  background: $main-color;
+
+  * {
+    color: $light-theme-color;
+  }
+
+  .switch-theme {
+    background: url("../assets/svg/moon.svg") center/contain no-repeat;
+  }
+
+  .header {
+    &-container {
+      background-image: url("../assets/img/bg-light.jpeg");
+    }
+
+    &-logo {
+      &:hover {
+        fill: $gold-color;
+      }
+
+      fill: black;
+    }
+  }
+
+  .nav-link {
+    &-link {
+      &_en {
+        @include white_hover;
+        transition: 0.5s;
+
+        &_active {
+          pointer-events: none;
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    background: $main-color;
+  }
+
+  .hamburger {
+    & > span {
+      background: $light-theme-color;
+    }
+  }
+
+  .hero {
+    &-button {
+      background-color: $main-color;
+      color: $black-color;
+    }
+
+    &-container {
+      background-image: url("../assets/img/bg-light.jpeg");
+    }
+  }
+
+  svg,
+  path {
+    fill: $black-color;
+  }
+
+  .section-title {
+    background: $main-color;
+    &-block {
+      background-image: linear-gradient(
+        to top,
+        $main-color 39px,
+        $black-color 39px,
+        $black-color 41px,
+        $main-color 41px
+      );
+    }
+  }
+
+  .contacts {
+    &_container {
+      background-image: url("../assets/img/contacts-light.jpeg");
+    }
+
+    &-button {
+      background-color: $main-color;
+      color: $black-color;
+    }
+
+    &-input {
+      background-color: $light-input-color;
+
+      &::placeholder {
+        color: $light-theme-color;
+      }
+    }
+  }
+
+  .price {
+    &-amount {
+      &_thousand {
+        color: $gold-color;
+      }
+    }
+  }
+
+  .button {
+    @include black_hover;
+    transition: 0.5s;
+
+    &_black {
+      background-color: $gold-color;
+      color: $black-color;
+
+      &_active {
+        background-color: $black-color;
+        color: $gold-color;
+      }
+    }
+  }
+}

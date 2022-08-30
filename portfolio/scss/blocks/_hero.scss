@@ -1,0 +1,61 @@
+.hero {
+  &-container {
+    height: 820px;
+    background-image: url("../assets/img/bg.jpeg");
+    background-position: center -90px;
+    background-repeat: no-repeat;
+    padding: 183px 81px;
+
+    @media (max-width: 768px) {
+      height: 500px;
+      background-position: -5px -121px;
+      background-size: auto 620px;
+      padding: 78px 60px;
+    }
+
+    @media (max-width: 720px) {
+      background-position: center 75%;
+    }
+
+    @media (max-width: 500px) {
+      padding: 78px 20px;
+    }
+  }
+
+  &-alexa {
+    font-family: "Merriweather";
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 32px;
+
+    @media (max-width: 768px) {
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 64px;
+    }
+  }
+
+  &-text {
+    width: 470px;
+    font-size: 20px;
+    line-height: 39px;
+
+    @media (max-width: 768px) {
+      width: 390px;
+      line-height: 24.2px;
+    }
+
+    @media (max-width: 500px) {
+      width: 200px;
+      font-size: 16px;
+    }
+  }
+  &-button {
+    margin-top: 25px;
+
+    @media (max-width: 768px) {
+      margin-top: 59px;
+    }
+  }
+}

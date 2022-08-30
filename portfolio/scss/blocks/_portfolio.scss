@@ -1,0 +1,16 @@
+.portfolio {
+  &-wrapper {
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: center;
+  }
+
+  &-img {
+    @include photo_hover;
+    transition: 0.5s;
+    max-width: 100%;
+  }
+}

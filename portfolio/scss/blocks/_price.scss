@@ -1,0 +1,75 @@
+.price {
+  &-wrapper {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 60px;
+
+    @media (max-width: 768px) {
+      margin-top: 50px;
+      gap: 50px;
+    }
+
+    @media (max-width: 420px) {
+      width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  &-item {
+    @include cards_hover;
+    transition: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    border: 3px solid $gold-color;
+    padding: 40px 111px;
+
+    @media (max-width: 768px) {
+      width: 420px;
+      padding: 40px;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 55px;
+    text-align: center;
+  }
+
+  &-amount {
+    margin-top: 20px;
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 47px;
+    text-align: center;
+    color: $gold-color;
+  }
+
+  &-descr {
+    margin-top: 22px;
+    text-align: center;
+  }
+
+  &-text {
+    display: block;
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  &-button {
+    margin-top: 40px;
+  }
+}
