@@ -1,0 +1,47 @@
+.video {
+  &-wrapper {
+    margin-top: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      margin-top: 50px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &_adaptive {
+      width: 100%;
+
+      @media (min-width: 769px) {
+        display: none;
+      }
+    }
+  }
+
+  &-btn {
+    @include gold_hover;
+    transition: 0.5s;
+
+    position: absolute;
+    background: url("../assets/svg/play.svg") no-repeat;
+    width: 130px;
+    height: 130px;
+    border: 0;
+
+    @media (max-width: 768px) {
+      background: url("../assets/svg/play-adaptive.svg") no-repeat;
+      width: 75px;
+      height: 75px;
+    }
+  }
+}

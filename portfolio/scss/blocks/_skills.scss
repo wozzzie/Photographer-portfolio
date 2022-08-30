@@ -1,0 +1,59 @@
+.skills {
+  &-wrapper {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+    column-gap: 40px;
+    row-gap: 40px;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      margin-top: 44px;
+      grid-template-columns: repeat(auto-fill, minmax(321px, 300px));
+      column-gap: 22px;
+      row-gap: 71px;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    }
+  }
+
+  &-item {
+    @include cards_hover;
+    transition: 0.5s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-title {
+    margin-top: 50px;
+    font-weight: bold;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      margin-right: 4px;
+      margin-top: 26px;
+      line-height: 40px;
+    }
+  }
+
+  &-text {
+    margin-top: 22px;
+    max-width: 280px;
+    font-size: 18px;
+    line-height: 39px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin-right: 2px;
+      line-height: 22px;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 200px;
+    }
+  }
+}

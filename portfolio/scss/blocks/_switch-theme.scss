@@ -1,0 +1,20 @@
+.switch-theme {
+  @include gold_hover;
+
+  margin-left: 35px;
+  margin-top: 3px;
+  cursor: pointer;
+  background: url("../assets/svg/sun.svg") center/contain no-repeat;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s linear;
+
+  @media (max-width: 768px) {
+    margin-right: 33px;
+    margin-left: 0;
+  }
+
+  @media (max-width: 360px) {
+    margin-right: 10px;
+  }
+}

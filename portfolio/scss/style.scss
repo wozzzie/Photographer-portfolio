@@ -1,0 +1,47 @@
+@import "base/_mixins.scss";
+@import "base/_variables.scss";
+
+@import "blocks/_header.scss";
+@import "blocks/_hero.scss";
+@import "blocks/_button.scss";
+@import "blocks/_section-title.scss";
+@import "blocks/_skills.scss";
+@import "blocks/_portfolio.scss";
+@import "blocks/_video.scss";
+@import "blocks/_price.scss";
+@import "blocks/_contacts.scss";
+@import "blocks/_footer.scss";
+@import "blocks/_hamburger.scss";
+@import "blocks/_switch-theme.scss";
+@import "blocks/_light-theme.scss";
+
+* {
+  font-family: "Inter", sans-serif;
+  //   font-family: "Merriweather", serif;
+  color: $main-color;
+  font-size: 20px;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $black-color;
+
+  @media (max-width: 768px) {
+    &.active {
+      overflow: hidden;
+    }
+  }
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  // padding: 0 20px;
+}

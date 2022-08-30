@@ -1,0 +1,123 @@
+.nav {
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+
+  &-item {
+    @include gold_hover;
+    transition: 0.5s;
+
+    &_skills {
+      margin-right: -2px;
+    }
+
+    &_portfolio {
+      margin-right: -6px;
+    }
+
+    &_lang {
+      font-weight: 700;
+    }
+  }
+
+  &-link {
+    text-decoration: none;
+    margin: 0 17px;
+    line-height: 50px;
+
+    &-active {
+      font-size: 35px;
+    }
+
+    &_en {
+      @include gold_hover;
+      transition: 0.5s;
+
+      font-weight: 700;
+      margin-right: 4px;
+      margin-left: 10px;
+      text-transform: uppercase;
+
+      &_active {
+        pointer-events: none;
+        color: $gold-color;
+      }
+
+      @media (max-width: 768px) {
+        margin-right: 4px;
+      }
+    }
+
+    &_divider {
+      cursor: default;
+    }
+
+    &_ru {
+      @include gold_hover;
+      transition: 0.5s;
+
+      font-weight: 700;
+    }
+
+    &-lang {
+      text-decoration: none;
+    }
+  }
+}
+.header {
+  &-container {
+    padding: 20px;
+    height: 90px;
+    background: url("../assets/img/bg.jpeg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+
+    @media (max-width: 768px) {
+      height: 90px;
+      background-position: -5px -31px;
+      background-size: auto 620px;
+      padding: 20px 64px 20px 60px;
+    }
+
+    @media (max-width: 720px) {
+      background-position: top center;
+    }
+
+    @media (max-width: 500px) {
+      padding: 20px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &-lang {
+    margin-top: 12px;
+    margin-left: 12px;
+
+    @media (max-width: 768px) {
+      margin-right: 27px;
+    }
+
+    @media (max-width: 360px) {
+      margin-right: 10px;
+    }
+  }
+
+  &-logo {
+    @include gold_hover;
+    transition: 0.5s;
+
+    margin-right: auto;
+  }
+}
