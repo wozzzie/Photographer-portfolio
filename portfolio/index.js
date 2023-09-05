@@ -164,7 +164,7 @@ function preloadSummerImages() {
   seasons.forEach((el) => {
     for (let i = 1; i <= 6; i++) {
       const img = new Image();
-      img.src = `../portfolio/assets/img/${el}/${i}.jpg`;
+      img.src = `./assets/img/${el}/${i}.jpg`;
     }
   });
 }
