@@ -1,13 +1,96 @@
 import i18Obj from "./translate.js";
 
-console.log(`Rolling Scopes School - portfolio#3 - Добавление функционала
-Self-evaluation by Maria Gornashevich 75 / 75 (85 / 85)
-✅ Смена изображений в секции portfolio +25
-✅ Перевод страницы на два языка +25
-✅ Переключение светлой и тёмной темы +25
-✅ Дополнительный функционал +10
-developed by goldmarkol - 2022
-    `);
+const videoBtn = document.querySelector(".video-btn"),
+  playIcon = document.querySelector(".play"),
+  volumeIcon = document.querySelector(".volume-icon"),
+  volumeInput = document.querySelector(".volume"),
+  progressInput = document.querySelector(".progress"),
+  video = document.querySelector(".viewer");
+
+let videoVolume = 0.5;
+video.volume = videoVolume;
+
+function togglePlay() {
+  if (video.paused) {
+    video.play();
+    videoBtn.classList.add("video-btn_hide");
+    playIcon.classList.add("pause");
+  } else {
+    video.pause();
+    videoBtn.classList.remove("video-btn_hide");
+    playIcon.classList.remove("pause");
+  }
+}
+
+videoBtn.addEventListener("click", togglePlay);
+playIcon.addEventListener("click", togglePlay);
+video.addEventListener("click", togglePlay);
+
+// Change volume
+
+function changeVolume() {
+  video.muted = !video.muted;
+
+  if (video.muted) {
+    videoVolume = volumeInput.value;
+    volumeInput.value = 0;
+  } else {
+    volumeInput.value = videoVolume;
+  }
+
+  volumeIcon.classList.toggle("mute");
+}
+
+function handleGradient(firstVal, secondVal) {
+  return `linear-gradient(to right, rgb(189, 174, 130) 0%, 
+            rgb(189, 174, 130) ${firstVal}%,
+            rgb(200, 200, 200) ${secondVal}%,
+            rgb(200, 200, 200) 100%)`;
+}
+
+function handleRangeUpdate() {
+  video.volume = volumeInput.value;
+
+  volumeInput.style.background = handleGradient(
+    volumeInput.value * 100,
+    volumeInput.value * 100
+  );
+}
+
+volumeInput.addEventListener("input", () => {
+  handleRangeUpdate();
+
+  if (+volumeInput.value === 0) {
+    volumeIcon.classList.add("mute");
+  } else {
+    volumeIcon.classList.remove("mute");
+  }
+});
+
+volumeIcon.addEventListener("click", () => {
+  changeVolume();
+  handleRangeUpdate();
+});
+
+handleRangeUpdate();
+
+// Update progress bar in video
+
+video.addEventListener("timeupdate", () => {
+  progressInput.value = video.currentTime / video.duration;
+
+  progressInput.style.background = handleGradient(
+    progressInput.value * 100,
+    progressInput.value * 100
+  );
+
+  if (video.currentTime === video.duration) {
+    playIcon.classList.add("pause");
+  }
+});
+progressInput.addEventListener("input", () => {
+  video.currentTime = progressInput.value * video.duration;
+});
 
 //  Logic for hamburger menu
 
